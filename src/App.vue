@@ -15,21 +15,28 @@ const currentPath = ref(window.location.hash)
 window.addEventListener('hashchange', () => {
   currentPath.value = window.location.hash
 })
+const isHome = ref(true)
 const currentView = computed(() => {
   console.log(currentPath.value.slice(1));
-  
+  isHome.value = currentPath.value.slice(1) === '/home' || currentPath.value.slice(1) === ''
+  console.log(currentPath.value.slice(1));
   return routes[currentPath.value.slice(1) || '/'] || NotFound
 })
 </script>
 
 <template>
-  <div class="flex-container">
-    <Nav></Nav>
-    <component :is="currentView"/>
+  <div class="flex-container" :class="{ home: isHome }">
+    <Nav :isHome="isHome"></Nav>
+    <component :is="currentView" />
   </div>
 </template>
 
 <style>
+.home {
+  background-image: url('https://api.hn/bing.php?rand=true');
+  background-position: center center;
+}
+
 #app,
 html,
 body {

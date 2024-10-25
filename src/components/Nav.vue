@@ -1,6 +1,6 @@
 <template>
     <button id="menu" @click="show = !show">{{ show }}</button>
-    <ol id="nav-ol" :class="show ? 'mini-nav' : 'mini-nav-show'">
+    <ol id="nav-ol" :class="show ? 'mini-nav' : 'mini-nav-show', { home: isHome }">
         <!-- <ol id="nav-ol" v-show="show"> -->
         <li class="nav-li" v-for="item in items">
             <a :href="item.path">{{ item.name }}</a>
@@ -21,10 +21,31 @@ const items = ref([{
 }, {
     path: '#/other', name: '其他'
 }])
-// defineProps(['items'])
+defineProps(['isHome'])
 </script>
 
 <style>
+.home {
+    color: #eee
+}
+
+.home a,
+.home a:hover,
+.home a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+.home .nav-li:hover {
+    background-color: rgba(0, 0, 0, .09);
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .09);
+    border-right: none;
+}
+.home #nav-ol {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+
 a,
 a:hover,
 a:visited {

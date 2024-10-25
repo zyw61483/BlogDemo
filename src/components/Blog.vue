@@ -42,7 +42,7 @@ const articles = ref([
 #blog-ol {
     /* display: flex; */
     padding: 0 5%;
-    width: 70%;
+    width: 80%;
     color: #213547;
     --vt-font-family-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
     --vt-font-family-base: Quotes, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

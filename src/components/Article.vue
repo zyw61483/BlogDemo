@@ -1,6 +1,6 @@
 <template>
     <span class="title">{{ title }}</span>
-    <p>{{ content }}</p>
+    <p v-html="content"></p>
 </template>
 
 <script setup>

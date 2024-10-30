@@ -4,11 +4,13 @@ import Temp from './components/Temp.vue'
 import Nav from './components/Nav.vue';
 import Blog from './components/Blog.vue';
 import Home from './components/Home.vue';
+import Aboutme from './components/Aboutme.vue';
 
 const routes = {
   '/': Home,
   '/home': Home,
   '/blog': Blog,
+  '/aboutme': Aboutme,
   '/other': Temp
 }
 const currentPath = ref(window.location.hash)
@@ -35,6 +37,8 @@ const currentView = computed(() => {
 .home {
   background-image: url('https://api.hn/bing.php?rand=true');
   background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 #app,
